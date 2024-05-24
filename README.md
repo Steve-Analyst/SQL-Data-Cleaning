@@ -9,7 +9,7 @@ This portfolio contains Data Analyst projects for SQL and Excel. I have imported
 - [Copy Data Set](#Copy-Data-Set)
 - [Remove Duplicates](#Remove-Duplicates)
 - [Standardizing Data](#Standardizing-Data)
-- [Solving/Removing Null Values or blank sets](#Solving-/-Removing-Null-Values-or-blanksets)
+- [Solving/Removing Null Values or blank sets](#Solving/Removing-Null-Values-or-blank-sets)
 - [Remove Any Unwanted Column(s) or Row(s)](#Remove-Any-Unwanted-Column(s)-or-Row(s))
 - [Conclusion](#Conclusion)
 
@@ -215,7 +215,7 @@ ALTER TABLE layoffs_staging2
 MODIFY COLUMN date DATE;
 ```
 
-## Solving/Removing Null Values or blank sets
+## Solving or Removing Null Values or blank sets
 
 1.  Checking if we can add/remove the Null/Blanks sets. If there is enough information to populate the Null/Blank sets, we will do that but if not, we will remove the whole raw, especially if the remaining data will not be useful for our purpose of the analyses. 
 
