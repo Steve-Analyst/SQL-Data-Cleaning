@@ -4,13 +4,13 @@ This portfolio contains Data Analyst projects for SQL and Excel. I have imported
 
 ## Table of Contents
 
-- [Data Sources](#DataSources)
+- [Data Sources](#Data-Sources)
 - [Tools](#Tools)
-- [Copy Data Set](#CopyDataSet)
-- [Remove Duplicates](#RemoveDuplicates)
-- [Standardizing Data](#StandardizingData)
-- [Solving/Removing Null Values or blank sets](#Solving/RemovingNullValuesorblanksets)
-- [Remove Any Unwanted Column(s) or Row(s)](#RemoveAnyUnwantedColumn(s)orRow(s))
+- [Copy Data Set](#Copy-Data-Set)
+- [Remove Duplicates](#Remove-Duplicates)
+- [Standardizing Data](#Standardizing-Data)
+- [Solving/Removing Null Values or blank sets](#Solving/Removing-Null-Values-or-blanksets)
+- [Remove Any Unwanted Column(s) or Row(s)](#Remove-Any-Unwanted-Column(s)-or-Row(s))
 - [Conclusion](#Conclusion)
 
 ## Data Sources
