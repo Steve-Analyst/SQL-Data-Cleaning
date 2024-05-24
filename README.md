@@ -215,7 +215,7 @@ ALTER TABLE layoffs_staging2
 MODIFY COLUMN date DATE;
 ```
 
-## Solving or Removing Null Values or blank sets
+## Solving/Removing Null Values or blank sets
 
 1.  Checking if we can add/remove the Null/Blanks sets. If there is enough information to populate the Null/Blank sets, we will do that but if not, we will remove the whole raw, especially if the remaining data will not be useful for our purpose of the analyses. 
 
