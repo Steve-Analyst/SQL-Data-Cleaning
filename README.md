@@ -10,7 +10,7 @@ This portfolio contains Data Analyst projects for SQL and Excel. I have imported
 - [Remove Duplicates](#Remove-Duplicates)
 - [Standardizing Data](#Standardizing-Data)
 - [Solving or Removing Null Values or blank sets](#Solving-or-Removing-Null-Values-or-blank-sets)
-- [Remove Any Unwanted Column(s) or Row(s)](#Remove-Any-Unwanted-Column(s)-or-Row(s))
+- [Remove Any Unwanted Column or Row](#Remove-Any-Unwanted-Column-or-Row)
 - [Conclusion](#Conclusion)
 
 ## Data Sources
@@ -263,7 +263,7 @@ FROM layoffs_staging2
 WHERE total_laid_off IS NULL AND percentage_laid_off IS NULL;
 ```
 
-## Remove Any Unwanted Column(s) or Row(s)
+## Remove Any Unwanted Column or Row
 
 -- We have now deleted the Null/Blank data sets, so we will now Remove the row_num Column because we don't need it anymore
 
