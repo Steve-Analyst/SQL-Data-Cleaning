@@ -23,7 +23,7 @@ SQL Server
 
 ## Copy Data set
 
-I will start by Copying the Data set before cleaning it so that the original data is not affected. 
+- **I will start by Copying the Data set before cleaning it so that the original data is not affected.**
 
 
 
@@ -53,6 +53,7 @@ FROM layoffs_staging
 
 ![image](https://github.com/stemla/Data-Analyst-Portfolio/assets/170471393/bf397ce1-9eb7-47bd-992f-34e8401622f1)
 
+
 2.  Making use of CTE to identify duplicates
 
 ```sql
@@ -71,7 +72,8 @@ WHERE row_num > 1;
 
 ![image](https://github.com/stemla/Data-Analyst-Portfolio/assets/170471393/8db6e2e4-be65-46a6-8372-9c1e37a1a860)
 
-I have investigated few companies to make sure this is truly a duplicate.  
+
+- **I have investigated few companies to make sure this is truly a duplicate.**  
 
 ```sql
 SELECT *
@@ -81,7 +83,7 @@ WHERE company = 'Better.com'
 
 3.  Deleting the Duplicates
    
--- Creating New Table calling it layoffs_staging2 (By Copy Clipboard, then Create Statement, then paste it), and add column row_num with data type int:
+- **Creating New Table calling it layoffs_staging2 (By Copy Clipboard, then Create Statement, then paste it), and add column row_num with data type *int*:**
 
 ```sql
 CREATE TABLE `layoffs_staging2` (
@@ -100,7 +102,7 @@ CREATE TABLE `layoffs_staging2` (
 
 ![image](https://github.com/stemla/Data-Analyst-Portfolio/assets/170471393/013a5e07-da83-48b2-bc33-b37ae4f945cb)
 
--- Copy data from layoffs_staging into layoffs_staging2 so that I can delete duplicates
+- **Copy data from layoffs_staging into layoffs_staging2 so that I can delete duplicates**
 
 ```sql
 INSERT INTO layoffs_staging2
@@ -112,6 +114,7 @@ FROM layoffs_staging
 ```
 
 ![image](https://github.com/stemla/Data-Analyst-Portfolio/assets/170471393/dbe256f5-863b-44e4-b210-82bbb452773d)
+
 
 ```sql
 SELECT *
@@ -129,6 +132,7 @@ WHERE row_num > 1;
 
 ![image](https://github.com/stemla/Data-Analyst-Portfolio/assets/170471393/cd4af69b-3a61-418a-a78a-e36d45649673)
 
+
 ```sql
 SELECT DISTINCT (company)
 FROM layoffs_staging2;
@@ -143,7 +147,7 @@ UPDATE layoffs_staging2
 SET company = TRIM(company);
 ```
 
-Checked other columns and I found an issue with Industry column. 
+- **Checked other columns and I found an issue with Industry column.** 
 
 ```sql
 SELECT DISTINCT industry
@@ -151,6 +155,7 @@ FROM layoffs_staging2
 ```
 
 ![image](https://github.com/stemla/Data-Analyst-Portfolio/assets/170471393/8aebc742-8e3d-430c-8c9b-7b72515a8db0)
+
 
 2.  It is difficult to analyze the data in the industry column, so we will need to order it. After Sorting it by ASC, we noticed that they are repeated names written in different ways, so we need to make sure that only one name per industry is recorded. Before making any changes, an investigation must be done to ensure that these are different names for one industry.
 
@@ -161,6 +166,7 @@ ORDER BY 1;
 ```
 
 ![image](https://github.com/stemla/Data-Analyst-Portfolio/assets/170471393/777f7476-e8d6-43c7-8495-3993125ff97e)
+
 
 3.  Investigate Crypto and Crypto Currency to see if they could be the same industry and the results show that they are the same but named differently. We will then Update all to be Crypto because they are the same industry. 
 
@@ -189,6 +195,7 @@ ORDER BY 1;
 
 ![image](https://github.com/stemla/Data-Analyst-Portfolio/assets/170471393/3c12f3b9-5656-409f-add3-c7cc7fc7c72b)
 
+
 ```sql
 SELECT DISTINCT country, TRIM(TRAILING '.' FROM country)
 FROM layoffs_staging2
@@ -202,6 +209,7 @@ WHERE country LIKE 'United States%';
 5.  We also found out that the Date column has incorrect DATA Type (text) and this needs to be corrected. We are going to change the data type from Text to DATE.
 
 ![image](https://github.com/stemla/Data-Analyst-Portfolio/assets/170471393/fc427a62-d0b1-4535-b8ca-9d9d1286ae6a)
+
 
 ```sql
 SELECT date,
@@ -229,7 +237,7 @@ FROM layoffs_staging2
 WHERE industry IS NULL OR industry = ' ';
 ```
 
-- Updating the industry column by populating the blank/null sets
+- **Updating the industry column by populating the blank/null sets**
 
 ```sql
 UPDATE layoffs_staging2
@@ -265,9 +273,10 @@ WHERE total_laid_off IS NULL AND percentage_laid_off IS NULL;
 
 ## Remove Any Unwanted Column or Row
 
--- We have now deleted the Null/Blank data sets, so we will now Remove the row_num Column because we don't need it anymore
+- **We have now deleted the Null/Blank data sets, so we will now Remove the row_num Column because we don't need it anymore**
 
 ![image](https://github.com/stemla/Data-Analyst-Portfolio/assets/170471393/447c92bf-1c31-410b-92db-9bb2fd372578)
+
 
 ```sql
 SELECT *
